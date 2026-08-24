@@ -1,0 +1,194 @@
+<?php
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package happypigeon
+ */
+
+?>
+<!doctype html>
+	<html <?php language_attributes(); ?>>
+	<head>
+		<meta charset="<?php bloginfo( 'charset' ); ?>">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<link rel="profile" href="https://gmpg.org/xfn/11">
+		<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/assets/img/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="<?php bloginfo('template_directory'); ?>/assets/img/favicon.ico" type="image/x-icon">
+
+		<?php wp_head(); ?>
+	<!--[if lt IE 9]>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+	<![endif]-->
+		<!-- Futura-pt-condensed & noto-sans-cjk-jp -->
+		<script>
+			(function(d) {
+				var config = {
+					kitId: 'wjm8dvd',
+					scriptTimeout: 3000,
+					async: true
+				},
+				h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+			})(document);
+		</script>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<!-- script async src="https://www.googletagmanager.com/gtag/js?id=UA-192520075-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-192520075-1', {'linker': {'domains': ['happy-pigeon.com', 'joycart101.net'] }});
+		</script -->
+		<!--20230112追加 Google Tag Manager -->
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-NFK249V');</script>
+		<!-- End Google Tag Manager 20230112追加ここまで-->
+	</head>
+	<?php if ( is_home() && is_front_page() ) : ?>
+	<body id="top" class="home">
+		<!--20230112追加 Google Tag Manager -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NFK249V"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager 20230112追加ここまで-->
+		<div class="wrapper bgcol-y">
+		<?php else : ?>
+			<body id="top" class="<?php echo $post->post_name; ?>">
+				<div class="wrapper">
+				<?php endif; ?>
+				<header id="header" class="cFix">
+					<div class="head_m">
+						<div class="head-div pc-only cFix">
+							<div class="logo">
+								<h1>
+									<a href="<?php echo home_url();?>">
+										<picture>
+											<source srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/header_logo.webp" type="image/webp">
+												<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/header_logo.png" srcset="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/header_logo.png" alt="ハッピーピジョン">
+											</picture>
+										</a>
+									</h1>
+								</div>
+								<ul class="menubar menubar-flex cFix">
+									<li class="menu-dropdown"><a href="<?php echo home_url();?>/product/" class="txt-center"><p class="fz-b-en fz-24">PRODUCT</p><p class="ttl-jp fz-r-jp fz-13">商品一覧</p></a>
+										<ul class="dropdown">
+											<li><a href="<?php echo home_url();?>/product#azfood"><p class="drop-txt-arr fz-r-jp fz-14 txt-black txt-left">AZフード</p></a></li>
+											<li><a href="<?php echo home_url();?>/product#kokusan"><p class="drop-txt-arr fz-r-jp fz-14 txt-black txt-left">国産フード</p></a></li>
+											<li><a href="<?php echo home_url();?>/product#snack"><p class="drop-txt-arr fz-r-jp fz-14 txt-black txt-left">国産・無添加のおやつ</p></a></li>
+											<li><a href="<?php echo home_url();?>/product#supli"><p class="drop-txt-arr fz-r-jp fz-14 txt-black txt-left">サプリメント</p></a></li>
+										</ul>
+									</li>
+									<li class="menu-dropdown"><a class="txt-center"><p class="fz-b-en fz-24">POINT</p><p class="ttl-jp fz-r-jp fz-13">ドックフードのこだわり</p></a>
+										<ul class="dropdown">
+											<li><a href="<?php echo home_url();?>/az_feature/"><p class="drop-txt-arr fz-r-jp fz-14 txt-black txt-left">AZフードとは</p></a></li>
+											<li><a href="<?php echo home_url();?>/domestic_feature/"><p class="drop-txt-arr fz-r-jp fz-14 txt-black txt-left">国産フードとは</p></a></li>
+										</ul>
+									</li>
+									<li class="menu-dropdown"><a href="<?php echo home_url();?>/aboutus/" class="txt-center"><p class="fz-b-en fz-24">ABOUT US</p><p class="ttl-jp fz-r-jp fz-13">ハッピーピジョンとは</p></a></li>
+									<li class="menu-dropdown"><a class="txt-center"><p class="fz-b-en fz-24">HELP</p><p class="ttl-jp fz-r-jp fz-13">お客さま窓口</p></a>
+										<ul class="dropdown">
+											<li><a href="<?php echo home_url();?>/qaa/"><p class="drop-txt-arr fz-r-jp fz-14 txt-black txt-left">Q&A</p></a></li>
+											<li><a href="<?php echo home_url();?>/form/"><p class="drop-txt-arr fz-r-jp fz-14 txt-black txt-left">お問い合わせ</p></a></li>
+											<li><a href="<?php echo home_url();?>/payment/"><p class="drop-txt-arr fz-r-jp fz-14 txt-black txt-left">支払い・配送に関して</p></a></li>
+										</ul>
+									</li>
+								</ul>
+								<ul class="menu-icon">
+									<li><a href="https://instagram.com/happy_pigeon_petshop?igshid=1ijm88jl5zml2" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/insta_icon_off.png" alt="instagram"></a></li>
+									<li><a href="https://twitter.com/hp_petshop?s=21" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/twitter_icon_off.png" alt="twitter"></a></li>
+									<li><a href="https://www.facebook.com/Happy-Pigeon-112469760943386/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/fb_icon_off.png" alt="facebook"></a></li>
+									<li><a href="http://www.happypigeon.net/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/vendors_icon_off.png" alt="業者様 専用サイトへ" class="vendors_img"></a></li>
+									<li><a href="http://joycart101.net/shinkouaz/member.php?mode=1"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/login_icon_off.png" alt="ログイン"></a></li>
+							<!-- <li><a href=""><p class="icon-rel"><img src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/img/common/icon_bg.png" alt=""><span class="icon-abs"></span></p></a>
+								<div class="search-form">
+									<form>
+										<input class="fz-b-en fz-14" type="text"
+										placeholder="商品キーワード検索">
+										<button type="submit"><img src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/img/common/search_icon_pc.png" alt=""></button>
+									</form>
+								</div>
+							</li> -->
+							<li><a href="https://joycart101.net/shinkouaz/order.php?mode=check"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/card_icon_off.png" alt="カート"></a></li>
+						</ul>
+					</div>
+					<div class="sp-only head-rel-sp">
+						<div class="head-div-sp cFix">
+							<div class="head-left">
+								<ul class="menu-logo">
+									<li><p class="menu-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/menu.png" alt="メニュー"></p>
+									</li>
+									<li><div class="logo-sp"><h1><a href="<?php echo home_url();?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/header_logo.png" alt="ハッピーピジョン"></a></h1></div></li>
+								</ul>
+							</div>
+							<div class="head-right">
+								<ul class="menu-icon">
+									<!-- <li id="search-btn"><a href=""><p class="icon-rel"><img src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/img/common/icon_bg.png" alt=""><span class="icon-abs"></span></p></a>
+										<div class="search-form">
+											<form>
+												<input class="fz-b-en fz-14" type="text"
+												placeholder="商品キーワード検索">
+												<button type="submit"><img src="<?php //echo get_stylesheet_directory_uri(); ?>/assets/img/common/search_icon_sp.png" alt=""></button>
+											</form>
+										</div>
+									</li> -->
+									<li><a href="https://joycart101.net/shinkouaz/order.php?mode=check"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/card_icon_off.png" alt="カート"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- header -->
+			<div class="sp-only">
+				<nav id="gnav">
+					<div class="g_navi">
+						<p class="close-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/close.png" alt="閉じる"></p>
+						<ul>
+							<li><p class="fz-b-en fz-32 fz-30-sp txt-black drop-txt-arr"><a href="http://joycart101.net/shinkouaz/member.php?mode=1">LOGIN<span class="fz-r-jp fz-16 fz-14-sp pl10 pl10-sp">マイページへログイン</span></a></p></li>
+							<li><p class="parents fz-b-en fz-32 fz-30-sp txt-black"><a href="<?php echo home_url();?>/product/">PRODUCT<span class="fz-r-jp fz-16 fz-14-sp pl10 pl10-sp">商品一覧</span></a></p>
+								<ul class="dropdown">
+									<li><p class="fz-r-jp fz-16 fz-14-sp drop-txt-arr"><a href="<?php echo home_url();?>/product#azfood">AZフード</a></p></li>
+									<li><p class="fz-r-jp fz-16 fz-14-sp drop-txt-arr"><a href="<?php echo home_url();?>/product#kokusan">国産フード</a></p></li>
+									<li><p class="fz-r-jp fz-16 fz-14-sp drop-txt-arr"><a href="<?php echo home_url();?>/product#snack">国産・無添加のおやつ</a></p></li>
+									<li><p class="fz-r-jp fz-16 fz-14-sp drop-txt-arr"><a href="<?php echo home_url();?>/product#supli">サプリメント</a></p></li>
+								</ul>
+							</li>
+							<li><p class="parents fz-b-en fz-32 fz-30-sp txt-black"><a href="">POINT<span class="fz-r-jp fz-16 fz-14-sp pl10 pl10-sp">ドックフードのこだわり</span></a></p>
+								<ul class="dropdown">
+									<li><p class="fz-r-jp fz-16 fz-14-sp drop-txt-arr"><a href="<?php echo home_url();?>/az_feature/">AZフードとは</a></p></li>
+									<li><p class="fz-r-jp fz-16 fz-14-sp drop-txt-arr"><a href="<?php echo home_url();?>/domestic_feature/">国産フードとは</a></p></li>
+								</ul>
+							</li>
+							<li><p class="fz-b-en fz-32 fz-30-sp txt-black drop-txt-arr"><a href="<?php echo home_url();?>/aboutus/">ABOUT US<span class="fz-r-jp fz-16 fz-14-sp pl10 pl10-sp">ハッピーピビョンとは</span></a></p></li>
+							<li><p class="parents fz-b-en fz-32 fz-30-sp txt-black"><a >HELP<span class="fz-r-jp fz-16 fz-14-sp pl10 pl10-sp">お客さま窓口</span></a></p>
+								<ul class="dropdown">
+									<li><p class="fz-r-jp fz-16 fz-14-sp drop-txt-arr"><a href="<?php echo home_url();?>/qaa/">Q&A</a></p></li>
+									<li><p class="fz-r-jp fz-16 fz-14-sp drop-txt-arr"><a href="<?php echo home_url();?>/form/">お問い合わせ</a></p></li>
+									<li><p class="fz-r-jp fz-16 fz-14-sp drop-txt-arr"><a href="<?php echo home_url();?>/payment/">支払い・配送に関して</a></p></li>
+								</ul>
+							</li>
+						</ul>
+						<div class="vendors-link">
+							<a href="http://www.happypigeon.net/" target="_blank">
+								<div class="vendors-img">
+									<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/vendors_sp.png" alt="業者様専用サイトへ">
+									<span class="fz-16 vendors-txt">業者様専用サイトへ</span>
+								</div>
+							</a>
+						</div>
+						<div class="contact-link mt30 mt25-sp">
+							<p class="insta-link"><a href="https://instagram.com/happy_pigeon_petshop?igshid=1ijm88jl5zml2" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/INSTA.png" alt="instagram"></a></p>
+							<p class="twitter-link"><a href="https://twitter.com/hp_petshop?s=21" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/TW.png" alt="twitter"></a></p>
+							<p class="fb-link"><a href="https://www.facebook.com/Happy-Pigeon-112469760943386/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/common/FB.png" alt="facebook"></a></p>
+						</div>
+					</div>
+				</nav>
+			</div>
+			<!-- nav -->
